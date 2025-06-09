@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h4>Como você se chama?</h4>
+    <input id="nome" type="text" placeholder="Seu nome">
+    <button onclick="boasVindas()">Pronto</button>
+    <div id="mensagem"></div>
+    <script>
+
+        function boasVindas() {
+            let input = document.querySelector("#nome");
+            let div = document.querySelector("#mensagem");
+            div.innerHTML += `<h1> Seja bem-vindo(a) ${input.value}</h1>`;
+            input.value = "";
+            input.focus = true
+        }
+
+    </script>
+</body>
+
+</html>
