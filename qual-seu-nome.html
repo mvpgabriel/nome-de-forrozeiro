@@ -21,17 +21,77 @@
             <div class="flex-1">
                 <label for="">Mês do aniversário</label>
                 <input id="Mes" type="text" class="outline rounded pl-3">
-            </div>
-            <button onclick="escolhernome()">Descobrir</button>
+            </div>    
         </div>
+         <button onclick= "escolhernome()" class="rounded-sm bg-yellow-400 mt-2">Descubra...</button>
         <div id="mensagem"></div>
     </div>
     <script>
+        const listanomeforrozeiro =
+        {
+            1: "Erivelton",
+            2: "Waldisney",
+            3: "Maurício",
+            4: "Solange",
+            5: "Miguelzin",
+            6: "Cinderela",
+            7: "Doutor",
+            8: "Filomena",
+            9: "Crispim",
+            10: "Edileusa",
+            11: "João Onofre",
+            12: "Betinha",
+            13: "João",
+            14: "Vanessa",
+            15: "Rodrigo",
+            16: "Pâmela",
+            17: "Ubiratan",
+            18: "Rapunzel",
+            19: "Chico",
+            20: "Maria Flor",
+            21: "Francisgleidson",
+            22: "Juliana",
+            23: "Natan",
+            24: "Mulher Gato",
+            25: "Superman",
+            26: "Doidinha dos pão",
+            27: "Vingador",
+            28: "Roberta",
+            29: "Optimus Prime",
+            30: "Patricinha",
+            31: "Luizão"
+        };
+        const listasobrenomeforrozeiro =
+        {
+            1: "O(a) Moral",
+            2: "Bixo(a) Solto(a)",
+            3: "Safadão(a)",
+            4: "Do Forró",
+            5: "Desmantelado(a)",
+            6: "Rei delas(o)",
+            7: "Estourado(a)",
+            8: "Do Arrocha",
+            9: "Do Brega",
+            10: "Do Sertão",
+            11: "Do Acordeon",
+            12: "Dos Teclados"
+        };
+
         function escolhernome() {
-            let div = document.querySelector("#mensagem")
+            let div = document.querySelector("#mensagem");
+            let inputDia = document.getElementById("#Dia");
+            let inputMes = document.getElementById("#Mes");
+            let valorEncontrado1 = listanomeforrozeiro[inputDia];
+            let valorEncontrado2 = listasobrenomeforrozeiro[inputMes];
+            if (1>=valorEncontrado1<=31 && 1>=valorEncontrado2<12) {
+                div.innerHTML = `Seu nome de forrozeiro é: ${valorEncontrado1.value} ${valorEncontrado2.value}`;
+            } else {
+                div.innerHTML = `Por favor digite um valor válido de dia ou mês`;
+            }
+            /*let div = document.querySelector("#mensagem")
             let inputDia = document.querySelector("#Dia")
             let inputMes = document.querySelector("#Mes")
-            div.innerHTML = `escolher o dia: ${inputDia.value}, escolher o mês: ${inputMes.value}`
+            div.innerHTML = `escolher o dia: ${inputDia.value}, escolher o mês: ${inputMes.value}`*/
 
         }
     </script>
